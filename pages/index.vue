@@ -6,22 +6,15 @@
         groover-test
       </h1>
       <h2 class="subtitle">
-        My superior Nuxt.js project
+        Go to test page -> <nuxt-link to="/sendtrack">/sendtrack</nuxt-link>
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="https://github.com/davysimonin/groover-test"
           target="_blank"
           class="button--green"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
+          Test's github repo
         </a>
       </div>
     </div>
@@ -32,6 +25,7 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  layout: 'main',
   components: {
     Logo
   }
@@ -66,7 +60,4 @@ export default {
   padding-bottom: 15px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>
