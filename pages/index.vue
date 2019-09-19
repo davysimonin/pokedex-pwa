@@ -6,7 +6,10 @@
         groover-test
       </h1>
       <h2 class="subtitle">
-        Go to test page -> <nuxt-link to="/sendtrack">/sendtrack</nuxt-link>
+        Go to test page ->
+        <nuxt-link to="/sendtrack">
+          /sendtrack
+        </nuxt-link>
       </h2>
       <div class="links">
         <a
