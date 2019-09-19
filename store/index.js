@@ -1,9 +1,19 @@
 export const state = () => ({
-  pokemons: {}
+  pokemons: [],
+  filteredPokemons: [],
+  nextUrl: ''
 })
 
 export const mutations = {
-  fetchPokemons (state, pokemons) {
+  setPokemons (state, pokemons) {
     state.pokemons = pokemons
+    state.filteredPokemons = pokemons
+  },
+  setNextPokemons (state, pokemons) {
+    state.pokemons = [...state.pokemons, ...pokemons]
+    state.filteredPokemons = [...state.pokemons]
+  },
+  setNextFetchUrl (state, url) {
+    state.nextUrl = url
   }
 }

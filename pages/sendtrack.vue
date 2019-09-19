@@ -20,7 +20,8 @@ export default {
   components: { CardsContainer, FiltersContainer },
   async fetch ({ store, $axios }) {
     const response = await $axios.get('https://pokeapi.co/api/v2/pokemon?limit=25')
-    store.commit('fetchPokemons', response.data.results)
+    store.commit('setPokemons', response.data.results)
+    store.commit('setNextFetchUrl', response.data.next)
   }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="navbar">
-      <div class="logo">
+      <nuxt-link to="/" class="logo">
         <img src="~/assets/Logo.svg" alt="Groover logo">
         <h1 class="">
           Groover
         </h1>
-      </div>
+      </nuxt-link>
       <div class="links">
         <div class="link goInf">
           Deviens influenceur
@@ -32,8 +32,9 @@
     align-items: center;
     box-shadow: 0 1px 5px 0 rgba(43, 38, 36, 0.2);
   }
-  div.logo {
+  .logo {
     display: flex;
+    text-decoration: none;
   }
   div.links {
     display: flex;
