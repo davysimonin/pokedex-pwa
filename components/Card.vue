@@ -4,10 +4,10 @@
       <img class="img" :src="sprite" alt="name">
     </div>
     <a-card class="card" :title="upperCaseFirstLetter()" :bordered="false" style="padding: 0 !important;">
-      <p><b>Type</b>: {{ formatTypes() }}</p>
       <p><b>N°</b>: {{ id }}</p>
-      <p><b>Height</b>: {{ height }}</p>
-      <p><b>Weight</b>: {{ weight }}</p>
+      <p><b>Type</b>: {{ formatTypes() }}</p>
+      <p><b>Height</b>: {{ formatHeight() }}</p>
+      <p><b>Weight</b>: {{ formatWeight() }}</p>
     </a-card>
   </div>
 </template>
@@ -23,6 +23,18 @@ export default {
     formatTypes () {
       const types = this.type.map(el => el.type.name)
       return types.join('/').toUpperCase()
+    },
+    formatWeight () {
+      if ((this.weight / 10) % 1 !== 0) {
+        return (this.weight / 10).toFixed(2) + 'kg'
+      }
+      return (this.weight / 10) + 'kg'
+    },
+    formatHeight () {
+      if ((this.height / 10) % 1 !== 0) {
+        return (this.height / 10).toFixed(2) + 'm'
+      }
+      return (this.height / 10) + 'm'
     }
   }
 }
