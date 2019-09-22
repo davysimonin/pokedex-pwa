@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="sendTrackContainer">
     <a-row>
-      <a-col :span="6">
+      <a-col :span="4">
         <FiltersContainer />
       </a-col>
-      <a-col :span="18">
+      <a-col :span="20">
         <CardsContainer />
       </a-col>
     </a-row>
