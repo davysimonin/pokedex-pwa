@@ -25,7 +25,8 @@ const options = [
   { label: 'Dragon', value: 'dragon' },
   { label: 'Ghost', value: 'ghost' },
   { label: 'Steel', value: 'steel' },
-  { label: 'Fairy', value: 'fairy' }
+  { label: 'Fairy', value: 'fairy' },
+  { label: 'Dark', value: 'dark' }
 ]
 export default {
   data () {
