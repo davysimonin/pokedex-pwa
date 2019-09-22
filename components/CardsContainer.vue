@@ -7,7 +7,7 @@
         :height="pokemon.height"
         :weight="pokemon.weight"
         :sprite="pokemon.sprites.front_default"
-        :type="pokemon.types"
+        :types="pokemon.types"
       />
     </a-col>
   </a-row>
@@ -38,14 +38,17 @@ export default {
     }
   },
   methods: {
-    async onScroll ({ target: { scrollingElement: { scrollTop, scrollTopMax } } }) {
-      if (scrollTop === scrollTopMax && !this.loading) {
-        this.loading = true
-        const response = await this.$axios.get(`${process.env.CUSTOM_POKEAPI}/${this.$store.state.nextUrl}`)
-        this.$store.commit('setNextPokemons', response.data.pokemons)
-        this.$store.commit('setNextFetchUrl', response.data.nextUrl)
-        this.loading = false
+    onScroll ({ target: { scrollingElement: { scrollTop, scrollTopMax } } }) {
+      if (scrollTop === scrollTopMax && this.canLoadNextPokemons()) {
+        this.$store.dispatch('loadNextPokemons')
       }
+    },
+    canLoadNextPokemons () {
+      const { isFetching, searchFilter, typeFilter, physicalFilter } = this.$store.state
+      if (!isFetching && !searchFilter && !typeFilter.length && !physicalFilter.length) {
+        return true
+      }
+      return false
     }
   }
 }
