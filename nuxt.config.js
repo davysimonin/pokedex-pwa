@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -35,21 +33,17 @@ module.exports = {
     '@/plugins/antd-ui'
   ],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
-  /*
   ** Nuxt.js modules
   */
+  buildModules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/eslint-module'
+  ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', {
       baseURL: process.env.CUSTOM_POKEAPI
-    }],
-    '@nuxtjs/dotenv'
+    }]
   ],
   /*
   ** Axios module configuration
