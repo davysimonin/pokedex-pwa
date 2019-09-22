@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        groover-test
+        GrooverDex
       </h1>
       <h2 class="subtitle">
         Go to test page ->
