@@ -40,7 +40,7 @@ export const mutations = {
 export const actions = {
   async loadNextPokemons ({ state, commit }) {
     commit('isFetching', true)
-    const response = await this.$axios.get(`${process.env.CUSTOM_POKEAPI}/${state.nextUrl}`)
+    const response = await this.$axios.get(`/${state.nextUrl}`)
     commit('setNextPokemons', response.data.pokemons)
     commit('setNextFetchUrl', response.data.nextUrl)
     commit('isFetching', false)
@@ -52,7 +52,7 @@ export const actions = {
       return
     }
     const filters = { types: state.typeFilter, physical: state.physicalFilter, search: searchFilter }
-    const response = await this.$axios.post(`${process.env.CUSTOM_POKEAPI}/api/filterpokemons`, { filters })
+    const response = await this.$axios.post(`/api/filterpokemons`, { filters })
     commit('setFilteredPokemons', response.data)
   }
 }

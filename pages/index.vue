@@ -13,11 +13,19 @@
       </h2>
       <div class="links">
         <a
-          href="https://github.com/davysimonin/groover-test"
+          href="https://github.com/davysimonin/GrooverDex"
           target="_blank"
           class="button--green"
         >
-          Test's github repo
+          Test's repo
+        </a>
+        -
+        <a
+          href="https://github.com/davysimonin/custom-pokeAPI"
+          target="_blank"
+          class="button--green"
+        >
+          Custom PokeApi's repo
         </a>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# groover-test
+# GrooverDex
 
 > My superior Nuxt.js project
 

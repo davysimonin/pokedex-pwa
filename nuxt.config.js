@@ -44,7 +44,9 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', {
+      baseURL: process.env.CUSTOM_POKEAPI
+    }],
     '@nuxtjs/dotenv'
   ],
   /*
