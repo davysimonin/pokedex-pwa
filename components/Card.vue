@@ -122,4 +122,7 @@ div.container {
 .steel {
   background-color: #b8b8d0;
 }
+.dark {
+  background-color: #705848;
+}
 </style>
