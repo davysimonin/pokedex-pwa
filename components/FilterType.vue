@@ -55,17 +55,4 @@ export default {
     flex-direction: column;
     justify-content: space-between;
   }
-  .reset {
-    color: #eb6345;
-    background-color: white;
-    border: 1px solid #eb6345;
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 14px;
-  }
-  .reset:hover {
-    background-color: #eb6345;
-    color: white;
-    transition: background-color 0.5s;
-  }
 </style>
