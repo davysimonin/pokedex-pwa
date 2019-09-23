@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    onScroll ({ target: { scrollingElement: { scrollTop, scrollTopMax } } }) {
-      if (scrollTop === scrollTopMax && this.canLoadNextPokemons()) {
+    onScroll () {
+      if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight && this.canLoadNextPokemons()) {
         this.$store.dispatch('loadNextPokemons')
       }
     },
