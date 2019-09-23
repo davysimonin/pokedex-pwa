@@ -19,9 +19,13 @@ export default {
   layout: 'main',
   components: { CardsContainer, FiltersContainer },
   async fetch ({ store, $axios }) {
-    const response = await $axios.get(`/api/fetchpokemons?limit=25`)
-    store.commit('setPokemons', response.data.pokemons)
-    store.commit('setNextFetchUrl', response.data.nextUrl)
+    try {
+      const response = await $axios.get(`/api/fetchpokemons?limit=25`)
+      store.commit('setPokemons', response.data.pokemons)
+      store.commit('setNextFetchUrl', response.data.nextUrl)
+    } catch (err) {
+      console.error(err)
+    }
   }
 }
 </script>

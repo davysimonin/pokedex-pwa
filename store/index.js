@@ -39,11 +39,16 @@ export const mutations = {
 
 export const actions = {
   async loadNextPokemons ({ state, commit }) {
-    commit('isFetching', true)
-    const response = await this.$axios.get(`/${state.nextUrl}`)
-    commit('setNextPokemons', response.data.pokemons)
-    commit('setNextFetchUrl', response.data.nextUrl)
-    commit('isFetching', false)
+    try {
+      commit('isFetching', true)
+      const response = await this.$axios.get(`/${state.nextUrl}`)
+      commit('setNextPokemons', response.data.pokemons)
+      commit('setNextFetchUrl', response.data.nextUrl)
+      commit('isFetching', false)
+    } catch (err) {
+      commit('isFetching', false)
+      console.error(err)
+    }
   },
   async fetchFilteredList ({ state, commit }) {
     const { typeFilter, physicalFilter, searchFilter } = state
@@ -52,7 +57,11 @@ export const actions = {
       return
     }
     const filters = { types: state.typeFilter, physical: state.physicalFilter, search: searchFilter }
-    const response = await this.$axios.post(`/api/filterpokemons`, { filters })
-    commit('setFilteredPokemons', response.data)
+    try {
+      const response = await this.$axios.post(`/api/filterpokemons`, { filters })
+      commit('setFilteredPokemons', response.data)
+    } catch (err) {
+      console.error(err)
+    }
   }
 }

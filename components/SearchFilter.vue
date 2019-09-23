@@ -3,7 +3,7 @@
     <button slot="extra" class="reset" @click="reset()">
       Reset
     </button>
-    <a-input placeholder="Pikachu" v-model="searchValue" @change="debouncedSearch" />
+    <a-input v-model="searchValue" placeholder="Pikachu" @change="debouncedSearch" />
   </a-card>
 </template>
 
@@ -32,14 +32,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.reset {
-  color: #eb6345;
-  background-color: white;
-  border: 1px solid #eb6345;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 14px;
-}
-</style>
