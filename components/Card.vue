@@ -58,7 +58,7 @@ div.container {
   border-radius: 20px;
 }
 .card {
-  width: 300px;
+  max-width: 300px;
   margin: 0 auto;
 }
 .url {
