@@ -17,15 +17,7 @@
           target="_blank"
           class="button--green"
         >
-          Test's repo
-        </a>
-        -
-        <a
-          href="https://github.com/davysimonin/custom-pokeAPI"
-          target="_blank"
-          class="button--green"
-        >
-          Custom PokeApi's repo
+          GrooverDex's repo
         </a>
       </div>
     </div>

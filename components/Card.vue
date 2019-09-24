@@ -4,13 +4,32 @@
       <img class="img" :src="sprite" alt="name">
     </div>
     <a-card class="card" :title="upperCaseFirstLetter()" :bordered="false" :head-style="{'text-align': 'center'}">
-      <p><b>N°</b>: {{ id }}</p>
-      <p>
-        <b>Type</b>:
-        <span v-for="type in types" :key="type" class="poketype" :class="type">{{ type.toUpperCase() }}</span>
-      </p>
-      <p><b>Height</b>: {{ formatValue(height, 'm') }}</p>
-      <p><b>Weight</b>: {{ formatValue(weight, 'kg') }}</p>
+      <div class="flex">
+        <div class="">
+          <p><b>N°</b>: {{ id }}</p>
+          <p><b>Height</b>: {{ formatValue(height, 'm') }}</p>
+        </div>
+        <div class="">
+          <p>
+            <b>Type</b>:
+            <span v-for="type in types" :key="type" class="poketype" :class="type">{{ type.toUpperCase() }}</span>
+          </p>
+          <p><b>Weight</b>: {{ formatValue(weight, 'kg') }}</p>
+        </div>
+      </div>
+      <a-card class="card" title="Base stats" :bordered="false" :head-style="{'text-align': 'center'}">
+        <div class="flex">
+          <div class="">
+            <p><b>HP</b>: {{ stats.hp.base_stat }} - EV: {{ stats.hp.effort }}</p>
+            <p><b>ATK</b>: {{ stats.attack.base_stat }} EV: {{ stats.attack.effort }}</p>
+            <p><b>DEF</b>: {{ stats.defense.base_stat }} EV: {{ stats.defense.effort }}</p>
+          </div>
+          <div class="flexDown">
+            <p><b>SP ATK</b>: {{ stats['special-attack'].base_stat }} EV: {{ stats['special-attack'].effort }}</p>
+            <p><b>SP DEF</b>: {{ stats['special-defense'].base_stat }} EV: {{ stats['special-defense'].effort }}</p>
+          </div>
+        </div>
+      </a-card>
     </a-card>
   </div>
 </template>
@@ -23,7 +42,8 @@ export default {
     height: { type: Number, required: true },
     weight: { type: Number, required: true },
     sprite: { type: String, required: true },
-    types: { type: Array, required: true }
+    types: { type: Array, required: true },
+    stats: { type: Object, required: true }
   },
   data () {
     return {
@@ -45,6 +65,13 @@ export default {
 }
 </script>
 <style scoped>
+div.flex {
+  display: flex;
+  justify-content: space-between;
+}
+div.flexDown {
+  align-self: flex-end;
+}
 div.ant-card-head-title {
   text-align: center;
 }
@@ -58,7 +85,7 @@ div.container {
   border-radius: 20px;
 }
 .card {
-  max-width: 300px;
+  max-width: 350px;
   margin: 0 auto;
 }
 .url {

@@ -5,6 +5,7 @@ export const state = () => ({
   searchFilter: '',
   typeFilter: [],
   physicalFilter: [],
+  statsFilter: [],
   isFetching: false
 })
 
@@ -51,12 +52,17 @@ export const actions = {
     }
   },
   async fetchFilteredList ({ state, commit }) {
-    const { typeFilter, physicalFilter, searchFilter } = state
-    if (!typeFilter.length && !physicalFilter.length && !searchFilter) {
+    const { typeFilter, physicalFilter, searchFilter, statsFilter } = state
+    if (!typeFilter.length && !physicalFilter.length && !searchFilter && !statsFilter.length) {
       commit('resetFilteredPokemons')
       return
     }
-    const filters = { types: state.typeFilter, physical: state.physicalFilter, search: searchFilter }
+    const filters = {
+      types: state.typeFilter,
+      physical: state.physicalFilter,
+      search: searchFilter,
+      stats: statsFilter
+    }
     try {
       const response = await this.$axios.post(`/api/filterpokemons`, { filters })
       commit('setFilteredPokemons', response.data)
