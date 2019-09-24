@@ -42,9 +42,10 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', {
-      baseURL: process.env.CUSTOM_POKEAPI
+      baseURL: process.env.PROJECT_URL
     }]
   ],
+  serverMiddleware: ['~/api/index.js'],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
