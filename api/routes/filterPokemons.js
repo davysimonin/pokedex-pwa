@@ -6,7 +6,8 @@ router.post('/', async (req, res, next) => {
   const physicalFilter = {}
   let typesFilter = {}
   let searchFilter = ''
-  const { search, types, physical } = req.body.filters
+  const statsFilter = {}
+  const { search, types, physical, stats } = req.body.filters
 
   if (search.length) {
     searchFilter = { $text: { $search: search } }
@@ -17,8 +18,16 @@ router.post('/', async (req, res, next) => {
   if (types.length) {
     typesFilter = { types: { $all: types } }
   }
+  if (stats.length) {
+    stats.forEach((stat) => {
+      statsFilter[stat] = -1
+    })
+  }
+
   const findQuery = { ...searchFilter, ...typesFilter }
-  const query = Pokemon.find(findQuery).sort(physicalFilter)
+  const sortQuery = { ...statsFilter, ...physicalFilter }
+
+  const query = Pokemon.find(findQuery).sort(sortQuery)
 
   const response = await query.exec()
   res.json(response)

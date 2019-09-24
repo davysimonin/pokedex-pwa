@@ -1,18 +1,20 @@
 <template>
   <div class="">
     <SearchFilter />
-    <FilterType />
-    <FilterPhysical />
+    <TypeFilter />
+    <StatsFilter />
+    <PhysicalFilter />
   </div>
 </template>
 
 <script>
-import FilterPhysical from './FilterPhysical'
-import FilterType from './FilterType'
+import PhysicalFilter from './PhysicalFilter'
+import TypeFilter from './TypeFilter'
 import SearchFilter from './SearchFilter'
+import StatsFilter from './StatsFilter'
 
 export default {
-  components: { FilterPhysical, FilterType, SearchFilter }
+  components: { PhysicalFilter, TypeFilter, SearchFilter, StatsFilter }
 }
 </script>
 

@@ -8,6 +8,7 @@
         :weight="pokemon.weight"
         :sprite="pokemon.sprites.front_default"
         :types="pokemon.types"
+        :stats="pokemon.stats"
       />
     </a-col>
   </a-row>
