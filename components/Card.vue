@@ -24,7 +24,8 @@
             <p><b>ATK</b>: {{ stats.attack.base_stat }} EV: {{ stats.attack.effort }}</p>
             <p><b>DEF</b>: {{ stats.defense.base_stat }} EV: {{ stats.defense.effort }}</p>
           </div>
-          <div class="flexDown">
+          <div class="">
+            <p><b>SPD</b>: {{ stats.speed.base_stat }} EV: {{ stats.speed.effort }}</p>
             <p><b>SP ATK</b>: {{ stats['special-attack'].base_stat }} EV: {{ stats['special-attack'].effort }}</p>
             <p><b>SP DEF</b>: {{ stats['special-defense'].base_stat }} EV: {{ stats['special-defense'].effort }}</p>
           </div>
