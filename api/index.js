@@ -6,7 +6,7 @@ const morgan = require('morgan')
 app.use(express.json())
 app.use(morgan('dev'))
 // Db connection
-mongoose.connect(process.env.DB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
