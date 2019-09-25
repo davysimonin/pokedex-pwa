@@ -13,7 +13,8 @@ const options = [
   { label: 'ATK', value: 'stats.attack.base_stat' },
   { label: 'DEF', value: 'stats.defense.base_stat' },
   { label: 'SP ATK', value: 'stats.special-attack.base_stat' },
-  { label: 'SP DEF', value: 'stats.special-defense.base_stat' }
+  { label: 'SP DEF', value: 'stats.special-defense.base_stat' },
+  { label: 'SPEED', value: 'stats.speed.base_stat' }
 ]
 export default {
   data () {
