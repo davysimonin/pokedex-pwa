@@ -42,9 +42,10 @@ export const actions = {
   async loadNextPokemons ({ state, commit }) {
     try {
       commit('isFetching', true)
-      const response = await this.$axios.get(`/${state.nextUrl}`)
-      commit('setNextPokemons', response.data.pokemons)
-      commit('setNextFetchUrl', response.data.nextUrl)
+      const response = await fetch(`${process.env.API_URL}/${state.nextUrl}`)
+      const data = await response.json()
+      commit('setNextPokemons', data.pokemons)
+      commit('setNextFetchUrl', data.nextUrl)
       commit('isFetching', false)
     } catch (err) {
       commit('isFetching', false)
@@ -63,9 +64,20 @@ export const actions = {
       search: searchFilter,
       stats: statsFilter
     }
+    console.log(JSON.stringify(filters))
     try {
-      const response = await this.$axios.post(`/api/filterpokemons`, { filters })
-      commit('setFilteredPokemons', response.data)
+      const response =
+      await fetch(`${process.env.API_URL}/api/filterpokemons`,
+        {
+          method: 'POST',
+          body: JSON.stringify(filters),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+      const data = await response.json()
+      commit('setFilteredPokemons', data)
     } catch (err) {
       console.error(err)
     }

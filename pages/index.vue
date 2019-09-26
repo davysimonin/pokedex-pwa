@@ -3,23 +3,8 @@
     <div>
       <logo />
       <h1 class="title">
-        GrooverDex
+        Pokedex
       </h1>
-      <h2 class="subtitle">
-        Go to test page ->
-        <nuxt-link to="/sendtrack">
-          /sendtrack
-        </nuxt-link>
-      </h2>
-      <div class="links">
-        <a
-          href="https://github.com/davysimonin/GrooverDex"
-          target="_blank"
-          class="button--green"
-        >
-          GrooverDex's repo
-        </a>
-      </div>
     </div>
   </div>
 </template>

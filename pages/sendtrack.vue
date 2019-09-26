@@ -18,11 +18,14 @@ import FiltersContainer from '../components/FiltersContainer'
 export default {
   layout: 'main',
   components: { CardsContainer, FiltersContainer },
-  async fetch ({ store, $axios }) {
+  async fetch (context) {
+    console.log(context)
     try {
-      const response = await $axios.get(`/api/fetchpokemons?limit=25`)
-      store.commit('setPokemons', response.data.pokemons)
-      store.commit('setNextFetchUrl', response.data.nextUrl)
+      const fetchPokemons = await fetch(`${process.env.API_URL}/api/fetchpokemons?limit=25`)
+      const response = await fetchPokemons.json()
+      console.log(response)
+      context.store.commit('setPokemons', response.pokemons)
+      context.store.commit('setNextFetchUrl', response.nextUrl)
     } catch (err) {
       console.error(err)
     }

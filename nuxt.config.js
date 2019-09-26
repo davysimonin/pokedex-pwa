@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -41,11 +41,15 @@ module.exports = {
   ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    ['@nuxtjs/axios', {
-      baseURL: process.env.PROJECT_URL
-    }]
+    [
+      '@nuxtjs/pwa'
+    ]
   ],
-  serverMiddleware: ['~/api/index.js'],
+
+  manifest: {
+    name: 'PokedexDB',
+    description: 'Progressive web app pokedex companion'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
