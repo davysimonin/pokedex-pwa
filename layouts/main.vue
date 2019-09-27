@@ -1,23 +1,11 @@
 <template>
   <div>
     <div class="navbar">
-      <nuxt-link to="/" class="logo">
-        <img src="~/assets/Logo.svg" alt="Groover logo">
+      <nuxt-link to="/" class="">
         <h1 class="">
-          Groover
+          Pokedex
         </h1>
       </nuxt-link>
-      <div class="links">
-        <div class="link goInf">
-          Deviens influenceur
-        </div>
-        <div class="link signIn">
-          Connexion
-        </div>
-        <div class="link signUp">
-          Inscription
-        </div>
-      </div>
     </div>
     <nuxt />
   </div>
@@ -66,7 +54,7 @@
     margin-right: 12px;
   }
   h1 {
-    color: #eb6345;
+    color: red;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 0;

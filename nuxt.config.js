@@ -46,9 +46,19 @@ module.exports = {
     ]
   ],
 
+  // Redirect automatically to https
+  serverMiddleware: [ 'redirect-ssl' ],
+
   manifest: {
     name: 'PokedexDB',
-    description: 'Progressive web app pokedex companion'
+    description: 'Progressive web app pokedex companion',
+    icons: [
+      {
+        'src': '/icon.png',
+        'type': 'image/png',
+        'sizes': '512x512'
+      }
+    ]
   },
   /*
   ** Axios module configuration

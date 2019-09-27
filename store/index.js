@@ -64,7 +64,6 @@ export const actions = {
       search: searchFilter,
       stats: statsFilter
     }
-    console.log(JSON.stringify(filters))
     try {
       const response =
       await fetch(`${process.env.API_URL}/api/filterpokemons`,
