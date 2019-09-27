@@ -39,11 +39,9 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/eslint-module'
   ],
+
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    [
-      '@nuxtjs/pwa'
-    ]
+    '@nuxtjs/pwa'
   ],
 
   // Redirect automatically to https
@@ -59,12 +57,6 @@ module.exports = {
         'sizes': '512x512'
       }
     ]
-  },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
   /*
   ** Build configuration
