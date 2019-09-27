@@ -45,7 +45,7 @@ module.exports = {
   ],
 
   // Redirect automatically to https
-  serverMiddleware: [ 'redirect-ssl' ],
+  // serverMiddleware: [ 'redirect-ssl' ],
 
   manifest: {
     name: 'PokedexDB',
